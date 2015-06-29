@@ -2,15 +2,15 @@ var express = require('express');
 var app     = express();
 
 var Spreadsheet = require('edit-google-spreadsheet');
-var oauth2      = require('./oauth2');
+var config      = require('./config');
 
-app.get('/spreasheet', function (req, res) {
+app.get('/spreadsheet', function (req, res) {
 
   Spreadsheet.load({
     debug: true,
     spreadsheetName: 'test_ss',
     worksheetName: 'Sheet1',
-    oauth2: oauth2
+    oauth2: config.oauth2
   }, function (err, spreadsheet) {
     if(err) throw err;
 

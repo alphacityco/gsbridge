@@ -1,4 +1,4 @@
 node_modules
-oauth2.json
+.config.json
 *.log
 .DS_Store
